@@ -1,0 +1,27 @@
+{
+  "name": "tdd2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -c jest.config.js --watchAll",
+    "build": "webpack",
+    "start": "serve ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@testing-library/dom": "^7.26.0",
+    "babel-jest": "^26.5.2",
+    "jest": "^26.5.3",
+    "serve": "^11.3.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/user-event": "^12.1.10",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.0.0"
+  }
+}

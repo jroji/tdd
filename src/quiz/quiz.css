@@ -1,0 +1,15 @@
+.next {
+  background: var(--color-orange);
+  padding: var(--spacing);
+  border-radius: var(--answer-border-radius);
+  border: none;
+  width: 100px;
+  align-self: flex-end;
+  font-size: 15px;
+  color: var(--color-white);
+  order: 1;
+}
+
+#question {
+  font-size: 1.5em;
+}
