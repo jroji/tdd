@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest -c jest.config.js --watchAll",
+    "test": "jest -c jest.config.js --watchAll --verbose",
     "start": "webpack-dev-server --open"
   },
   "author": "",
