@@ -30,6 +30,13 @@ export class AnswersComponent {
       if (button.textContent === this.correctAnswer) {
         button.classList.add('correct');
       }
-    })
+    });
+
+    const answerClickEvent = new CustomEvent('answerClick', {
+      detail: isCorrect,
+      bubbles: true,
+    });
+
+    event.target.dispatchEvent(answerClickEvent);
   }
 }

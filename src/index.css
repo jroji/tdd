@@ -1,5 +1,5 @@
-@import './answers/answers.css';
-@import './quiz/quiz.css';
+@import './components/answers/answers.css';
+@import './components/quiz/quiz.css';
 
 @font-face {
   font-family: 'Poppins';
