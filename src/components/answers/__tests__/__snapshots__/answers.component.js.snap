@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering AnswersComponent renders correctly 1`] = `
+<div>
+  <button
+    class="answer-button"
+  >
+    Madrid
+  </button>
+  <button
+    class="answer-button"
+  >
+    Pekin
+  </button>
+  <button
+    class="answer-button"
+  >
+    Hong Kong
+  </button>
+  <button
+    class="answer-button"
+  >
+    Kiev
+  </button>
+</div>
+`;

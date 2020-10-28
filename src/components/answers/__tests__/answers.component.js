@@ -1,6 +1,6 @@
 import { getAllByRole, getByText, waitFor } from "@testing-library/dom";
 import userEvent from '@testing-library/user-event'
-import { AnswersComponent } from "./answers";
+import { AnswersComponent } from "../answers.component";
 
 
 describe('Rendering AnswersComponent', () => {
@@ -13,6 +13,10 @@ describe('Rendering AnswersComponent', () => {
     dom = document.createElement('div');
     // When
     new AnswersComponent(dom, answers, 'Madrid');
+  });
+
+  it ('renders correctly', () => {
+    expect(dom).toMatchSnapshot();
   });
 
   it('should render 4 answers given an array', () => {

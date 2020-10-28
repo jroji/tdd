@@ -1,12 +1,11 @@
-import { getAllByRole, getAllByTestId, getByTestId, getByText, waitFor } from "@testing-library/dom";
-import { Quiz } from "./quiz";
+import { getAllByRole, getByTestId, getByText, waitFor } from "@testing-library/dom";
+import { Quiz } from "../quiz.component";
 import userEvent from "@testing-library/user-event";
-import { CountriesService } from "../countries/countries";
-import { QuestionMock } from "../countries/__mocks__/countries.mock";
-import { within } from '@testing-library/dom'
+import { CountriesService } from "../../countries/countries.service";
+import { QuestionMock } from "../../countries/__mocks__/countries.service.mock";
 
 // Gracias al automock de Jest, podemos hacer esto para mockear todas las respuestas
-jest.mock("../countries/countries");
+jest.mock("../../countries/countries.service");
 
 // Para evitar que la petición devuelva undefined, mockeamos la respuesta del método que nos interesa
 const mockCountriesAnswers = () => {
@@ -23,6 +22,10 @@ describe('rendering quiz', () => {
     countriesService = new CountriesService();
 
     new Quiz(dom, countriesService);
+  });
+
+  it ('renders correctly', () => {
+    expect(dom).toMatchSnapshot();
   });
 
   beforeEach(() => {
@@ -65,7 +68,7 @@ describe('rendering quiz', () => {
         userEvent.click(getAllByRole(answerSection, 'button')[0]);
       });
 
-      it('should render the next button after answer a question', async () => {
+      it('should render the next button', async () => {
         expect(getByText(dom, 'Next')).toBeVisible();
       });
     })

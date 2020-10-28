@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering quiz renders correctly 1`] = `
+<div>
+  <button
+    class="next"
+    data-testid="next-button"
+  >
+    Next
+  </button>
+</div>
+`;

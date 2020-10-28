@@ -1,4 +1,4 @@
-import { AnswersComponent } from "../answers/answers";
+import { AnswersComponent } from "../answers/answers.component";
 
 /**
  * Crea un Quiz con preguntas y respuestas sobre países

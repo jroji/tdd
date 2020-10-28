@@ -1,5 +1,5 @@
-import { CountriesService } from "./countries";
-import { CountriesMock } from "./__mocks__/countries.mock";
+import { CountriesService } from "./countries.service";
+import { CountriesMock } from "./__mocks__/countries.service.mock";
 
 describe('fetching countries', () => {
   let countries;
