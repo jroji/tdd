@@ -1,8 +1,9 @@
-import { getAllByTestId, getByTestId, getByText, waitFor } from "@testing-library/dom";
+import { getAllByRole, getAllByTestId, getByTestId, getByText, waitFor } from "@testing-library/dom";
 import { Quiz } from "./quiz";
 import userEvent from "@testing-library/user-event";
 import { CountriesService } from "../countries/countries";
 import { QuestionMock } from "../countries/__mocks__/countries.mock";
+import { within } from '@testing-library/dom'
 
 // Gracias al automock de Jest, podemos hacer esto para mockear todas las respuestas
 jest.mock("../countries/countries");
@@ -60,7 +61,8 @@ describe('rendering quiz', () => {
     describe('after click on an answer', () => {
 
       beforeEach(() => {
-        userEvent.click(getAllByTestId(dom, 'answer-button')[0]);
+        const answerSection = getByTestId(dom, 'answers-section');
+        userEvent.click(getAllByRole(answerSection, 'button')[0]);
       });
 
       it('should render the next button after answer a question', async () => {

@@ -8,14 +8,18 @@ export class AnswersComponent {
 
   renderAnswersOnContainer(answers, domElement) {
     answers.forEach((answer) => {
-      const element = document.createElement('button');
-      element.setAttribute('data-testid', 'answer-button');
-      element.className = 'answer-button';
-      element.textContent = answer;
-      element.addEventListener('click', (event) => { this.validateAnswer(event) })
-      this.answerButtons.push(element);
-      domElement.appendChild(element);
+      const button = this.createButton(answer);
+      this.answerButtons.push(button);
+      domElement.appendChild(button);
     });
+  }
+
+  createButton (answer) {
+    const element = document.createElement('button');
+    element.className = 'answer-button';
+    element.textContent = answer;
+    element.addEventListener('click', (event) => { this.validateAnswer(event) })
+    return element
   }
 
   validateAnswer(event) {
@@ -24,19 +28,26 @@ export class AnswersComponent {
 
     event.target.classList.add(isCorrect ? 'correct' : 'incorrect');
 
-    this.answerButtons.forEach((button) => {
+    this.disableAllButtons(this.answerButtons, this.correctAnswer)
+    this.notifyAnswer(event.target, isCorrect);
+  }
+
+  disableAllButtons(buttons, correctAnswer) {
+    buttons.forEach((button) => {
       button.setAttribute('disabled', true);
 
-      if (button.textContent === this.correctAnswer) {
+      if (button.textContent === correctAnswer) {
         button.classList.add('correct');
       }
     });
+  }
 
+  notifyAnswer(fromElement, isCorrect) {
     const answerClickEvent = new CustomEvent('answerClick', {
       detail: isCorrect,
       bubbles: true,
     });
 
-    event.target.dispatchEvent(answerClickEvent);
+    fromElement.dispatchEvent(answerClickEvent);
   }
 }

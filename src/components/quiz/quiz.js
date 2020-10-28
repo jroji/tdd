@@ -63,7 +63,7 @@ export class Quiz {
    * @param {HTMLElement} htmlContainer
    */
   renderAnswerContainer(htmlContainer) {
-    const container = this.createElement('section', 'answers-section', '');
+    const container = this.createElement('section', '', 'answers-section');
     htmlContainer.appendChild(container);
     return container;
   }

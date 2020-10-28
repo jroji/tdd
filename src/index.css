@@ -21,6 +21,7 @@ html, body {
   margin: 0;
   padding: 0;
   --color-primary: #ABAFE6;
+  --color-text: #2F527B;
   --color-background: #5256A1;
   --color-correct: #60BF88;
   --color-incorrect: #EA8282;
@@ -56,6 +57,7 @@ body {
 .title {
   color: var(--color-white);
   align-self: flex-start;
+  margin-bottom: 10px;
 }
 
 .answers {
@@ -65,6 +67,21 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+  min-height: 200px;
+  justify-content: space-around;
+}
+
+.answers::before {
+  content: '';
+  background-image: url(./assets/undraw_adventure.svg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  background-size: contain;
+  top: -70px;
+  right: 0;
 }
 
 @media screen and (max-width: 768px) {
